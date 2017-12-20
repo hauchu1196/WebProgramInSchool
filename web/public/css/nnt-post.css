@@ -1,0 +1,237 @@
+.dvp-trending ol, ul {
+    list-style: none;
+}
+#myNavbar ol, ul {
+    list-style: none;
+}
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+@media screen and (max-width: 600px) {
+    .dvp-trending, .dvp-top-header, .dvp-search-header, .btn-close-item{
+        display: none;
+    }
+    #dvp-logo-rep{
+        display: inline-block;
+    }
+}
+.dvp-top-header {
+    background: #f0a52b;
+    height: 70px;
+    position: relative;
+    z-index: 1;
+}
+#dvp-logo-rep{
+    display: none;
+}
+.navbar-inverse {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+.navbar {
+    border-radius: 0px;
+}
+.dvp-logo-home {
+    width: 157px;
+    height: 60px;
+    position: absolute;
+    top: 7px;
+    left: 0;
+    text-decoration: none;
+}
+.dvp-logo-home img {
+    /*width: 157px;*/
+    height: 60px;
+    position: absolute;
+    text-decoration: none;
+}
+.dvp-trending {
+    position: absolute;
+    top: 18px;
+    left: 230px;
+    padding-left: 30px;
+}
+.dvp-trending:before {
+    width: 19px;
+    height: 12px;
+    background: url(../img/sprite-k14.20.png) no-repeat;
+    background-position: -388px -55px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    content: '';
+}
+.dvp-trending ul{
+    padding: 0px;
+}
+.dvp-trend {
+    float: left;
+    margin-right: 10px;
+}
+.dvp-trend a {
+    display: block;
+    height: 28px;
+    padding: 0 15px;
+    line-height: 28px;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 100px;
+    background: rgba(0,0,0,0.02);
+}
+
+.dvp-search-header {
+    text-align: center;
+    position: absolute;
+    top: 19px;
+    right: 0;
+}
+.dvp-search {
+    float: left;
+    margin-top: -2px;
+    margin-right: 10px;
+}
+.dvp-search input {
+    height: 30px;
+    border: none;
+    font-size: 13px;
+    padding-left: 15px;
+    border-radius: 100px;
+}
+.dvp-btn-search {
+    border: none;
+    background-color: #f0a52b;
+}
+.dvp-menu-header{
+    border-bottom: 1px solid #e7e7e7;
+    margin-bottom: 1px;
+    /*    position: fixed;
+        left: 10px;
+        top: 1px;*/
+}
+.dvp-menu-item a {
+    display: block;
+    font-size: 15px;
+    line-height: 48px;
+    color: #333;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-sizing: border-box;
+}
+.dvp-menu-item a:hover{
+    border-bottom: 4px solid #ff5e34;
+}
+.dvp-menu-item>a {
+    border-bottom: 4px solid #222;
+}
+/*end menu*/
+
+/*main*/
+.nnt-inf-main-post{
+    margin-top: 20px;
+}
+.nnt-title-main-post{
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.nnt-author-main-post{
+    color: #fb6c27;
+    font-weight: bold;
+}
+.nnt-source-main-post{
+    color: #41455e;
+}
+
+.nnt-time-main-post{
+    color: #777;
+}
+
+.nnt-mainidea-post{
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 15px;
+}
+.nnt-link-post a{
+    text-decoration: none;
+}
+.nnt-link-post ul li{
+    margin-top: 15px;
+}
+.nnt-content1-post{
+    font-size: 15px;
+    margin-top: 20px;
+}
+/*end main*/
+/*place 1*/
+.nnt-title-place1-post{
+    font-size: 17px;
+    font-weight: bold;
+    margin: 25px 0;
+}
+.nnt-img-post{
+    text-align: center;
+}
+.nnt-img-post img{
+    width: 70%;
+    margin-top: 20px;
+}
+.nnt-photo-post{
+    background-color: #f2f2f2;
+    color: #777777;
+    width: 70%;
+    margin: 0 auto;
+    line-height: 40px;
+    padding-left: 30px;
+    font-weight: bold;
+}
+/*end place 1*/
+/*footer*/
+.dvp-top-footer{
+    height: 36px;
+    background: #e9e9e9;
+    margin-top: 30px;
+}
+.dvp-text-footer-title{
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+.dvp-col-footer{
+    padding-top: 20px;
+    height: 180px;
+    border-right: 1px solid #e7e7e7;
+}
+.last{
+    border: none;
+}
+.dvp-col-footer p {
+    font-size: 13px;
+    line-height: 18px;
+    color: #777;
+}
+.dvp-social-footer{
+    padding: 0px;
+}
+.dvp-social-footer-item{
+    float: left;
+    padding: 10px;
+}
+/*end footer*/
+
+#map {
+    margin-top: 10px;
+    height: 500px;
+}
+
+.map-title{
+    line-height: 36px;
+    background: #e9e9e9;
+    margin-top: 30px;
+    padding-left: 10px;
+    font-size: 17px;
+    font-weight: bold;
+}
