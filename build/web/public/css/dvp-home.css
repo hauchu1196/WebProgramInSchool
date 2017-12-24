@@ -155,9 +155,6 @@ ol, ul {
     float: left;
     padding: 10px;
 }
-#myNavbar > ul.nav.navbar-nav.navbar-right > li > a{
-    padding: 5px 5px 0px 0px;
-}
 /*content*/
 @media screen and (max-width: 600px) {
     .panel-title{

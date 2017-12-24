@@ -24,6 +24,7 @@
 <link rel="stylesheet" type="text/css" href="public/css/hcv-du-lich.css">
 <link rel="stylesheet" type="text/css" href="public/css/nnt-topmenu.css">
 <link rel="stylesheet" type="text/css" href="public/css/nnt-post.css">
+<link rel="stylesheet" type="text/css" href="public/css/starability-all.min.css">
 <script src="public/js/jquery-3.2.1.min.js"></script>
 <script src="public/js/bootstrap.min.js"></script>
 <script type='text/javascript' src='public/js/knockout-3.4.2.js'></script>

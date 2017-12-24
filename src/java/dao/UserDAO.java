@@ -29,13 +29,12 @@ public class UserDAO extends IDAO<User> {
         } catch (SQLException e) {
         }
     }
-    
-        public boolean checkEmail(String email) {
-        String sql = "SELECT * FROM user WHERE email = '" + email + "'";
+
+    public boolean checkUser(String user) {
+        String sql = "SELECT * FROM user WHERE `username` = '" + user + "'";
         try {
             rs = statement.executeQuery(sql);
             while (rs.next()) {
-                conn.close();
                 return true;
             }
         } catch (SQLException ex) {
@@ -43,7 +42,7 @@ public class UserDAO extends IDAO<User> {
         }
         return false;
     }
-    
+
     public User login(User user) {
         String sql = "SELECT * FROM user WHERE username = '" + user.getUsername() + "' and password = '" + user.getPassword() + "' ;";
         User us = new User();
@@ -79,7 +78,7 @@ public class UserDAO extends IDAO<User> {
         conn = DBconnect.getConnection();
         Date date = new Date();
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String dateString  = df.format(date);
+        String dateString = df.format(date);
         String sql = "INSERT INTO `user`(`name`, `email`, `username`, `password`, `created_at`) VALUES  (?,?,?,?,?)";
         try {
             this.preStatement = this.conn.prepareStatement(sql);

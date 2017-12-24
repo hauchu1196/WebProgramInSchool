@@ -5,23 +5,22 @@
  */
 package servlet;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import dao.ArticleDAO;
+import dao.CommentDAO;
+import dao.RateDAO;
+import dao.TagDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import model.Article;
-import model.Category;
+import model.Comment;
+import model.Rate;
+import model.Tag;
+import model.User;
 
 /**
  *
@@ -29,54 +28,49 @@ import model.Category;
  */
 public class ArticleServlet extends HttpServlet {
 
-    private ArticleDAO articleDAO = new ArticleDAO();
-
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ArticleServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ArticleServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
+    private final ArticleDAO articleDAO = new ArticleDAO();
+    private final TagDAO tagDAO = new TagDAO();
+    private final CommentDAO commentDAO = new CommentDAO();
+    private RateDAO rateDAO = new RateDAO();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setCharacterEncoding("UTF8"); // this line solves the problem
-        response.setContentType("application/json");
-        String tag = request.getParameter("tag");
-        System.out.println(tag);
-        ArrayList<Article> list = new ArrayList<>();
-        switch (tag) {
-            case "du-lich":
-                list = articleDAO.getArticleByCategory(1);
-                break;
-            case "an-uong":
-                list = articleDAO.getArticleByCategory(2);
-                break;
-            default:
-                list = articleDAO.getArticleByTag(tag);
-                break;
+        int id = Integer.valueOf(request.getParameter("id"));
+        Article article = articleDAO.getArticleById(id);
+        ArrayList<Tag> listTag = new ArrayList<>();
+        ArrayList<Comment> listComment = new ArrayList<>();
+        listTag = tagDAO.getTagByArticleId(id);
+        listComment = commentDAO.getCommentByArticleID(id);
+        request.setAttribute("article", article);
+        request.setAttribute("list_tag", listTag);
+        request.setAttribute("list_comment", listComment);
+
+        User user = (User) request.getSession().getAttribute("user");
+        if (user != null) {
+            Rate rate = rateDAO.selectByArticleUser(article, user);
+            request.setAttribute("rate", rate);
         }
-        if (list != null) {
-            PrintWriter outPrintWriter = response.getWriter();
-            Gson g = new GsonBuilder().disableHtmlEscaping().create();
-            g.toJson(list, outPrintWriter);
-        }
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("article.jsp");
+        dispatcher.forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Article article = articleDAO.getArticleById(id);
+        User user = (User) request.getSession().getAttribute("user");
+        int rating = Integer.parseInt(request.getParameter("rating"));
+
+        Rate rate = new Rate(article, user, rating);
+        if (rateDAO.selectByArticleUser(article, user) == null) {
+            rateDAO.insert(rate);
+        } else {
+            rateDAO.update(rate);
+        }
+        response.sendRedirect("/travel/article?id=" + id + "#rate");
     }
 
     @Override

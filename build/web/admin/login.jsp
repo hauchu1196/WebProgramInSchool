@@ -16,6 +16,8 @@
         <link href="public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- styles -->
         <link href="public/css/login-admin.css" rel="stylesheet">
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://code.jquery.com/jquery.js"></script>
     </head>
     <body class="login-bg">
         <div class="header">
@@ -63,11 +65,16 @@
                 </div>
             </div>
         </div>
+        
+        <script>
+            $(document).ready(function () {
+                
+            })
+        </script>
 
 
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://code.jquery.com/jquery.js"></script>
+        
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="public/bootstrap/js/bootstrap.min.js"></script>
         <script src="public/js/custom.js"></script>

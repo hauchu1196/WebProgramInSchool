@@ -7,8 +7,6 @@ package servlet;
 
 import dao.UserDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -23,24 +21,7 @@ import model.User;
  */
 public class UserServlet extends HttpServlet {
 
-    private UserDAO userDAO = new UserDAO();
-
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet UserServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet UserServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
+    private final UserDAO userDAO = new UserDAO();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -49,8 +30,7 @@ public class UserServlet extends HttpServlet {
         if (session.getAttribute("user") != null) {
             response.sendRedirect("/travel/");
         } else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-            dispatcher.forward(request, response);
+            response.sendRedirect("/travel/");
         }
     }
 
@@ -61,6 +41,7 @@ public class UserServlet extends HttpServlet {
         String url = "";
         User user = new User();
         HttpSession session = request.getSession();
+        RequestDispatcher rd;
         switch (command) {
             case "register":
                 user.setName(request.getParameter("name"));
@@ -70,6 +51,8 @@ public class UserServlet extends HttpServlet {
                 userDAO.insert(user);
                 session.setAttribute("user", user);
                 url = "/index.jsp";
+                rd = getServletContext().getRequestDispatcher(url);
+                rd.forward(request, response);
                 break;
             case "login":
                 String userName = request.getParameter("username");
@@ -79,14 +62,17 @@ public class UserServlet extends HttpServlet {
                 if (user != null) {
                     session.setAttribute("user", user);
                     url = "/index.jsp";
+                    rd = getServletContext().getRequestDispatcher(url);
+                    rd.forward(request, response);
                 } else {
-                    request.setAttribute("error", "Error email or password!");
-                    url = "/layout/header.jsp";
+//                    request.setAttribute("error", "Error email or password!");
+//                    url = "/layout/header.jsp";
+                    response.getWriter().write("error");
                 }
                 break;
         }
-        RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
-        rd.forward(request, response);
+//        RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
+//        rd.forward(request, response);
     }
 
     /**

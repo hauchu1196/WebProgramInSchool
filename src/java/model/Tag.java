@@ -11,16 +11,16 @@ package model;
  */
 public class Tag {
 
-    private int id, tag;
+    private int id, idCategory;
     private String name, alias;
 
     public Tag() {
 
     }
 
-    public Tag(int id, int tag, String name, String alias) {
+    public Tag(int id, int idCategory, String name, String alias) {
         this.id = id;
-        this.tag = tag;
+        this.idCategory = idCategory;
         this.name = name;
         this.alias = alias;
     }
@@ -33,12 +33,12 @@ public class Tag {
         this.id = id;
     }
 
-    public int getTag() {
-        return tag;
+    public int getIdCategory() {
+        return idCategory;
     }
 
-    public void setTag(int tag) {
-        this.tag = tag;
+    public void setIdCategory(int idCategory) {
+        this.idCategory = idCategory;
     }
 
     public String getName() {

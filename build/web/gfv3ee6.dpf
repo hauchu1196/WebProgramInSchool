@@ -8,4 +8,15 @@
       <description>Keep a copy of the generated servlet class' java code.</description>
     </property>
   </jsp-config>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>test</web-resource-name>
+      <description/>
+      <url-pattern>/admin/*</url-pattern>
+      <http-method>GET</http-method>
+      <http-method>DELETE</http-method>
+      <http-method>OPTIONS</http-method>
+      <http-method>HEAD</http-method>
+    </web-resource-collection>
+  </security-constraint>
 </glassfish-web-app>

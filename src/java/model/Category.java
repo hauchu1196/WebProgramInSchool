@@ -47,4 +47,7 @@ public class Category {
         this.alias = alias;
     }
 
+    public String toDatatable() {
+        return "[\"" + id + "\",\"" + name + "\",\"" + alias + "\"]"; 
+    }
 }

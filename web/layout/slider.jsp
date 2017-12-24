@@ -28,19 +28,23 @@
                                     <div class="item active">
                                         <a href="" title=""><img class="dvp-img-slider" src="public/img/pexels-photo-287240.jpeg"></a>
                                         <div class="carousel-caption">
-                                            <h3>Puddin'</h3>
+                                            <h3>"Một nửa cái thú của việc đi là nghệ thuật đi lạc."</h3>
                                         </div>
                                     </div>
                                     <div class="item">
                                         <a href="" title=""><img class="dvp-img-slider" src="public/img/pexels-photo-239520.jpeg"></a>
                                         <div class="carousel-caption">
-                                            <h3>Bạn từ xa ghé Hà Nội, tôi thường dắt đến Cộng Cà phê như một nơi phải tới</h3>
+                                            <h1>CỨ ĐI ĐI</h1>
+                                            <h3>
+                                                "Hạnh phúc không phải đích đến, <br>
+                                                - mà là trên từng chặng đường đi -"
+                                            </h3>
                                         </div>
                                     </div>
                                     <div class="item">
                                         <a href="" title=""><img class="dvp-img-slider" src="public/img/pexels-photo-59519.jpeg"></a>
                                         <div class="carousel-caption">
-                                            <h3>5 địa điểm du lịch độc đáo trên thế giới đã kịp in dấu chân các bạn trẻ Việt Nam!</h3>
+                                            <h3>"Thế giới là 1 cuốn sách, và ai  không đi chỉ đọc được một trang."</h3>
                                         </div>
                                     </div>
                                     <a class="left carousel-control" href="#slide-show" data-slide="prev">

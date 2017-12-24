@@ -17,9 +17,9 @@
     <!-- Animation library for notifications   -->
     <link href="public/assets/css/animate.min.css" rel="stylesheet" />
 
-<!--      Light Bootstrap Table core CSS    
-    <link href="public/assets/css/light-bootstrap-dashboard.css" rel="stylesheet" />
--->
+    <!--      Light Bootstrap Table core CSS    
+        <link href="public/assets/css/light-bootstrap-dashboard.css" rel="stylesheet" />
+    -->
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="public/assets/css/demo.css" rel="stylesheet" />
@@ -48,7 +48,9 @@
     <link href="public/assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
     <link href="public/assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
     <script src="public/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
-    
+    <script src="public/assets/global/scripts/datatable.js" type="text/javascript"></script>
+    <script src="public/assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
+    <script src="public/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>    
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
@@ -62,4 +64,6 @@
           apply the skin class to the body tag so the changes take effect.
     -->
     <link rel="stylesheet" href="public/dist/css/skins/skin-blue.min.css">
+    
+    
 </head>

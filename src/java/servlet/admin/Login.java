@@ -36,6 +36,7 @@ public class Login extends HttpServlet {
     public void init() throws ServletException {
         super.init(); //To change body of generated methods, choose Tools | Templates.
         userDAO = new UserDAO();
+        System.out.println("initLogin");
     }
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -69,6 +70,7 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        System.out.println("get login");
         processRequest(request, response);
     }
 
@@ -83,12 +85,15 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        System.out.println("post login");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         User user = new User(username, password);
         User userLogin = userDAO.login(user);
         if (userLogin != null && userLogin.getRole() == 1) {
+            request.getSession().setAttribute("user", userLogin);
             response.sendRedirect("/travel/admin/index.jsp");
+            return;
         } else {
             processRequest(request, response);
         }

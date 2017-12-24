@@ -29,25 +29,27 @@
             %>  
             <div class="hcv-article">
                 <div class="col-md-10">
-                    <%
+<%
                         for (Article a : articles) {
                     %>
-                    <div class="row">
+                    <a href=article?id=<%=a.getId()%> title="<%=a.getTitle()%>">
+                        <div class="row">
 
-                        <div class="col-md-4">
-                            <img src="public/img/<%=a.getThumbnail()%>" alt="" style="width: 100%;">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="hcv-tn-meta">
-                                <span class="hcv-tn-time hcv-date-time" title="2017-09-26T19:30:00">3 ngày trước</span>
+                            <div class="col-md-4">
+                                <img src="public/img/<%=a.getThumbnail()%>" alt="" style="width: 100%;">
                             </div>
-                            <h3 class="hcv-tn-title">
-                                <a href="<%=a.getLink() + '-' + a.getId()%>" title="<%=a.getTitle()%>"><%=a.getTitle()%></a>
-                            </h3>
-                            <p class="hcv-tn-sapo">Vừa đẹp mắt lại vừa ngon "cạn lời", từ món nóng tới món lạnh,… bao nhiêu đây đủ để khiến bạn kích thích muốn xách ba lô và lên máy ...</p>
+                            <div class="col-md-8">
+                                <div class="hcv-tn-meta">
+                                    <span class="hcv-tn-time hcv-date-time" title="2017-09-26T19:30:00"><%=a.getCreated_at()%></span>
+                                </div>
+                                <h3 class="hcv-tn-title">
+                                    <a href=article?id=<%=a.getId()%> title="<%=a.getTitle()%>"><%=a.getTitle()%></a>
+                                </h3>
+                                <!--<p class="hcv-tn-sapo">Nhắc tới Úc, không thể bỏ qua Melbourne và Perth, 2 thành phố nằm ở phía tây và phía nam nổi tiếng bởi cảnh quan thiên nhiên xinh ...</p>-->
 
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <%
                         }
                     %>
