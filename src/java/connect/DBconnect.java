@@ -23,7 +23,7 @@ public class DBconnect {
             int port = 3306;
             String dbName = "travel";
             String user = "root";
-            String password = "root";
+            String password = "";
             String dbPath = String.format("jdbc:mysql://%s:%d/%s?user=%s&password=%s&characterEncoding=utf-8&" + "useUnicode=true", host, port, dbName, user, password);
             conn = java.sql.DriverManager.getConnection(dbPath);
 //            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/travel", "root", "");

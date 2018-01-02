@@ -24,6 +24,9 @@
 <link rel="stylesheet" type="text/css" href="public/css/hcv-du-lich.css">
 <link rel="stylesheet" type="text/css" href="public/css/nnt-topmenu.css">
 <link rel="stylesheet" type="text/css" href="public/css/nnt-post.css">
+<link rel="stylesheet" type="text/css" href="public/web_css/detailflat-20171205v3.min.css">
+<!--<link rel="stylesheet" type="text/css" href="public/web_css/kenh14flat-20171219v1.min.css">-->
+<!--<link rel="stylesheet" type="text/css" href="public/web_css/responsive-20170407v1.min.css">-->
 <link rel="stylesheet" type="text/css" href="public/css/starability-all.min.css">
 <script src="public/js/jquery-3.2.1.min.js"></script>
 <script src="public/js/bootstrap.min.js"></script>

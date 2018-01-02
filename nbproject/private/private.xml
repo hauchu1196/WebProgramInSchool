@@ -3,27 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/src/java/dao/TagDAO.java</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/src/java/servlet/ArticleServlet.java</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/src/java/dao/CategoryDAO.java</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/web/article_1.jsp</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/web/WEB-INF/glassfish-web.xml</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/src/java/dao/ArticleDAO.java</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/web/WEB-INF/web.xml</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/web/admin/article.jsp</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/web/article.jsp</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/src/java/servlet/ImageServlet.java</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/src/java/servlet/UserServlet.java</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/web/admin/addArticle.jsp</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/src/java/dao/IDAO.java</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/src/java/servlet/DuLichServlet.java</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/src/java/servlet/admin/ArticleServlet.java</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/src/java/servlet/AnUongServlet.java</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/web/admin/category.jsp</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/src/java/servlet/admin/TagServlet.java</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/src/java/servlet/admin/AddArticleServlet.java</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/src/java/servlet/admin/FileUploadServlet.java</file>
-            <file>file:/D:/workspace/LapTrinhWeb/Travel/Travel/src/java/model/Article.java</file>
+            <file>file:/C:/Users/DELL/Desktop/Study/Year%204%20-%20I/LTWEB/New%20folder/WebProgramInSchool/src/java/servlet/HomeServlet.java</file>
+            <file>file:/C:/Users/DELL/Desktop/Study/Year%204%20-%20I/LTWEB/New%20folder/WebProgramInSchool/src/java/model/Article.java</file>
         </group>
     </open-files>
 </project-private>
