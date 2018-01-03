@@ -195,12 +195,12 @@
                                             <div class="col-md-8" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
                                                 <!-- Nav tabs -->
                                                 <ul class="nav nav-tabs">
-                                                    <li class="login-form active"><a href="#Login" data-toggle="tab">Đăng nhập</a></li>
+                                                    <li class="login-form"><a href="#Login" data-toggle="tab">Đăng nhập</a></li>
                                                     <li class="register-form"><a href="#Registration" data-toggle="tab">Đăng ký</a></li>
                                                 </ul>
                                                 <!-- Tab panes -->
                                                 <div class="tab-content">
-                                                    <div class="tab-pane login-form active" id="Login">
+                                                    <div class="tab-pane login-form" id="Login">
                                                         <form role="form" action="" method="post" class="registration-form" id="form-login">
                                                             <%if (request.getParameter("error") != null) {%>
                                                             <div>

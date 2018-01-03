@@ -16,7 +16,7 @@ public class User {
     private int id;
     private String name, email, username, password;
     private int role;
-    private Timestamp created_at;
+    private Timestamp created_at, updated_at;
 
     public User() {
     }
@@ -35,6 +35,28 @@ public class User {
         this.created_at = created_at;
         this.role = role;
     }
+
+    public User(int id, String name, String email, String username, String password, int role, Timestamp created_at, Timestamp updated_at) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
+    }
+
+    public Timestamp getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(Timestamp updated_at) {
+        this.updated_at = updated_at;
+    }
+
+    
+    
 
     public int getId() {
         return id;
@@ -92,7 +114,6 @@ public class User {
         this.role = role;
     }
 
-    @Override
     public String toString() {
         return "User{" + "id=" + id + ", name=" + name + ", email=" + email + ", username=" + username + ", password=" + password + ", role=" + role + ", created_at=" + created_at + '}';
     }

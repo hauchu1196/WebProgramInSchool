@@ -77,6 +77,14 @@
         <servlet-name>SearchServlet</servlet-name>
         <servlet-class>servlet.SearchServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AdminUserServlet</servlet-name>
+        <servlet-class>servlet.admin.UserServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditUserServlet</servlet-name>
+        <servlet-class>servlet.admin.EditUserServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FileUploadServlet</servlet-name>
         <url-pattern>/upload</url-pattern>
@@ -155,6 +163,15 @@
     <servlet-mapping>
         <servlet-name>SearchServlet</servlet-name>
         <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminUserServlet</servlet-name>
+        <url-pattern>/admin/user</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditUserServlet</servlet-name>
+        <url-pattern>/admin/user/edit</url-pattern>
+        <url-pattern>/admin/user/edit/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

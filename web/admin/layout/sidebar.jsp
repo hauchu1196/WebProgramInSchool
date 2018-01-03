@@ -41,6 +41,7 @@
         <!-- Optionally, you can add icons to the links -->
         <li><a href="/travel/admin/article"><i class="fa fa-link"></i> <span>Article</span></a></li>
         <li><a href="/travel/admin/category"><i class="fa fa-link"></i> <span>Category</span></a></li>
+        <li><a href="/travel/admin/user"><i class="fa fa-user"></i> <span>User</span></a></li>
 <!--        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>

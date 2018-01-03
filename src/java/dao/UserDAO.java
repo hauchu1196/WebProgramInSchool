@@ -9,6 +9,7 @@ import connect.DBconnect;
 import java.util.Date;
 //import java.sql.Date;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -65,7 +66,19 @@ public class UserDAO extends IDAO<User> {
 
     @Override
     public ArrayList<User> selectAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ArrayList<User> list = new ArrayList<>();
+        String sql = "select * from user";
+        try {
+            rs = statement.executeQuery(sql);
+            while (rs.next()) {
+                User user = new User(rs.getInt("id"), rs.getString("name"), rs.getString("email"),
+                        rs.getString("username"), rs.getString("password"), rs.getInt("role"), rs.getTimestamp("created_at"), rs.getTimestamp("updated_at"));
+                list.add(user);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
     }
 
     @Override
@@ -97,17 +110,65 @@ public class UserDAO extends IDAO<User> {
 
     @Override
     public int update(User object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("update");
+        System.out.println(object.toString());
+        String sql = "update user set name = ?, email = ?, username = ?, updated_at = ? where id = ?";
+        try {
+            preStatement = conn.prepareStatement(sql);
+            preStatement.setString(1, object.getName());
+            preStatement.setString(2, object.getEmail());
+            preStatement.setString(3, object.getUsername());
+            preStatement.setTimestamp(4, new Timestamp(System.currentTimeMillis()));
+            preStatement.setInt(5, object.getId());
+            preStatement.executeUpdate();
+            return 1;
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
     }
 
     @Override
     public int delete(User object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("deleteArticle");
+        String sql = "delete from user where id = ?";
+        try {
+            preStatement = conn.prepareStatement(sql);
+            preStatement.setInt(1, object.getId());
+            preStatement.executeUpdate();
+            return 1;
+        } catch (SQLException ex) {
+            Logger.getLogger(ArticleDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
     }
 
     @Override
     public void closeConnection() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public User findById(int id) {
+        User user = new User();
+        String sql = "select * from user where id = ?";
+        try {
+            preStatement = conn.prepareStatement(sql);
+            preStatement.setInt(1, id);
+            rs = preStatement.executeQuery();
+            while(rs.next()) {
+                user.setId(rs.getInt("id"));
+                user.setEmail(rs.getString("email"));
+                user.setName(rs.getString("name"));
+                user.setRole(rs.getInt("role"));
+                user.setPassword(rs.getString("password"));
+                user.setUsername(rs.getString("username"));
+                user.setCreated_at(rs.getTimestamp("created_at"));
+                user.setUpdated_at(rs.getTimestamp("updated_at"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return user;
     }
 
 }

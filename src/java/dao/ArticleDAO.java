@@ -309,10 +309,10 @@ public class ArticleDAO extends IDAO<Article> {
             preStatement.setString(3, object.getLink());
             preStatement.setString(4, object.getContent());
             preStatement.setString(5, object.getThumbnail());
-            preStatement.setInt(6, object.getId());
-            preStatement.setString(7, object.getLatitude());
-            preStatement.setString(8, object.getLongitude());
-            preStatement.setString(9, object.getLocationDetail());
+            preStatement.setString(6, object.getLatitude());
+            preStatement.setString(7, object.getLongitude());
+            preStatement.setString(8, object.getLocationDetail());
+            preStatement.setInt(9, object.getId());
             preStatement.executeUpdate();
             return 1;
         } catch (SQLException ex) {
