@@ -1,0 +1,17 @@
+.title-main .nav>li>a {
+	display: initial;
+}
+.title-main .nav-tabs {
+    border-bottom: none;
+}
+.title-main .nav-tabs>li>a {
+	border-top: none;
+	border-right: none;
+	border-left: none;
+}
+.title-main .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    cursor: default;
+    background-color: #ff5e34;
+    color: #fff;
+    border: none;
+}

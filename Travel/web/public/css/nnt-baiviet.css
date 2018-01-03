@@ -1,0 +1,122 @@
+/*main title*/
+.title-main{
+    display: inline-block;
+    line-height: 56px;
+    background-color: #222;
+    border-bottom: 4px solid #ff5e34;
+    width: 100%;
+    margin-top: 50px;
+}
+.text-main{
+    font-weight: bold;
+    font-size: 23px;
+    color: white;
+}
+.title-main ul{
+    list-style: none;
+}
+.title-main ul li{
+    float: left;
+    padding-right: 20px;
+}
+.title-main ul li a{
+    border-radius: 100px;
+    padding: 5px 10px;
+    font-size: 13px;
+    line-height: 20px;
+    text-decoration: none;
+    color: #ccc;
+    background-color: #383838;
+    font-weight: 300;
+    border-bottom: 2px solid #ff5e34;
+}
+
+.title-main ul li a:hover{
+    background-color: #ff5e34;
+    color: #fff;
+}
+
+.image-text-main{
+    margin-top: 20px;
+}
+.image-text-main img{
+    width: 100%;
+}
+.image-text-main .link-main{
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.image-text-main .link-main a{
+    text-decoration: none;
+    color: black;
+}
+.image-text-main .link-main a:hover{
+    color: #cccccc;
+}
+
+/*btn xem thêm*/
+.btn-xem-them{
+    float: left;
+    width: 100%;
+    padding-top: 25px;
+    text-align: center;
+}
+.btn-xem-them a{
+    text-transform: uppercase;  
+    border-radius: 100px;
+    padding: 5px 10px;
+    font-size: 13px;
+    line-height: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #ff5e34;
+    font-weight: 300;
+}
+/*nút xóa bài viết */
+.btn-close-item{
+    position: absolute;
+    right: 22px;
+    z-index: 1;
+}
+.btn-close-item a{
+    color: #5f5f5f;
+}
+@media screen and (min-width: 992px) {
+    .du-lich{
+        height: 300px;
+    } 
+}
+.klw-new-tags {
+    border-top: 1px solid #e4e4e4;
+    margin-top: 25px;
+    padding-top: 15px;
+    margin-bottom: 30px!important;
+}
+.knt-list .kli {
+    margin-bottom: 8px;
+}
+.knt-list .kli {
+    float: left;
+    margin-right: 10px;
+}
+.knt-list .kli a {
+    padding: 8px 10px;
+    display: block;
+    font-family: Arial;
+    font-size: 14px;
+    text-decoration: none;
+    background: #ebebeb;
+    color: #555;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    transition: background .3s,color .3s;
+    -webkit-transition: background .3s,color .3s;
+    -moz-transition: background .3s,color .3s;
+}
+.comment-article{
+    margin-top: 25px;
+    padding-top: 15px;
+    margin-bottom: 30px!important;
+}

@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Article;
+import tools.StringUtils;
 
 /**
  *
@@ -26,18 +27,13 @@ public class SearchServlet extends HttpServlet {
 
     private ArticleDAO articleDAO = new ArticleDAO();
 
- public static String removeAccent(String s) {
-  
-  String temp = Normalizer.normalize(s, Normalizer.Form.NFD);
-  Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
-  return pattern.matcher(temp).replaceAll("");
- }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String key = SearchServlet.removeAccent(request.getParameter("key"));
         ArrayList<Article> list = new ArrayList<>();
+        request.setCharacterEncoding("UTF-8");
+        String key = request.getParameter("key").toString();
+        key = StringUtils.removeAccent(key);
         list = articleDAO.selectByName(key);
         request.setAttribute("list_article", list);
         RequestDispatcher dispatcher = request.getRequestDispatcher("search.jsp");
