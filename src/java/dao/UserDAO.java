@@ -6,11 +6,15 @@
 package dao;
 
 import connect.DBconnect;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.Date;
 //import java.sql.Date;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -73,21 +77,24 @@ public class UserDAO extends IDAO<User> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
+        @Override
     public int insert(User object) {
-        conn = DBconnect.getConnection();
+//        conn = DBconnect.getConnection();        
+        Connection conn = DBconnect.getConnection();
         Date date = new Date();
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String dateString = df.format(date);
-        String sql = "INSERT INTO `user`(`name`, `email`, `username`, `password`, `created_at`) VALUES  (?,?,?,?,?)";
+        String sql = "INSERT INTO `user`(`name`, `email`, `username`, `password`, `created_at`, `updated_at`, `role`) VALUES (?,?,?,?,?,?,?)";
         try {
-            this.preStatement = this.conn.prepareStatement(sql);
-            this.preStatement.setString(1, object.getName());
-            this.preStatement.setString(2, object.getEmail());
-            this.preStatement.setString(3, object.getUsername());
-            this.preStatement.setString(4, object.getPassword());
-            this.preStatement.setString(5, dateString);
-            this.preStatement.executeUpdate();
+            PreparedStatement ps = conn.prepareCall(sql);
+            ps.setString(1, object.getName());
+            ps.setString(2, object.getEmail());
+            ps.setString(3, object.getUsername());
+            ps.setString(4, object.getPassword());
+            ps.setString(5, dateString);
+            ps.setString(6, dateString);
+            ps.setInt(7, 0);
+            ps.executeUpdate();
             return 1;
         } catch (SQLException ex) {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);

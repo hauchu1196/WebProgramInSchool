@@ -202,21 +202,16 @@
                                                 <div class="tab-content">
                                                     <div class="tab-pane login-form active" id="Login">
                                                         <form role="form" action="" method="post" class="registration-form" id="form-login">
-                                                            <%if (request.getParameter("error") != null) {%>
-                                                            <div>
-                                                                <p style="color:red"><%=request.getParameter("error")%></p>
-                                                            </div> 
-                                                            <%}%>
                                                             <div class="form-group" id="error">
                                                                 
                                                             </div>
                                                             <div class="form-group">
                                                                 <label class="sr-only" for="form-user-name">Tài khoản</label>
-                                                                <input type="text" name="username" placeholder="Tài khoản..." class="form-user-name form-control" id="form-username">
+                                                                <input type="text" name="username" placeholder="Tài khoản..." class="form-user-name form-control" id="form-username" required>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label class="sr-only" for="form-password">Mật khẩu</label>
-                                                                <input type="password" name="password" placeholder="Mật khẩu..." class="form-password form-control" id="form-password">
+                                                                <input type="password" name="password" placeholder="Mật khẩu..." class="form-password form-control" id="form-password" required>
                                                             </div>
                                                             <input type="hidden" value="login" name="command" id="form-command">
                                                             <button type="button" class="btn" id="btn-login">Đăng nhập ngay!</button>
@@ -230,7 +225,7 @@
 //                                                                    console.log(formData);
                                                                     $.post('UserServlet', formData, function (data) {
                                                                         if(data=='error'){
-//                                                                            $('#erorr').append('');
+                                                                            $("#error").empty();
                                                                             $("#error").append( "<label style='color: red'>Sai tên đăng nhập hoặc mật khẩu</label>" );
                                                                         }else{
                                                                             location.reload();
@@ -244,20 +239,20 @@
                                                         <form role="form" action="UserServlet" method="post" class="registration-form">
                                                             <div class="form-group">
                                                                 <label class="sr-only" for="form-name">Tên</label>
-                                                                <input type="text" name="name" placeholder="Tên..." class="form-name form-control" id="form-name1">
+                                                                <input type="text" name="name" placeholder="Tên..." class="form-name form-control" id="form-name1" required>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label class="sr-only" for="form-email">Email</label>
-                                                                <input type="text" name="email" placeholder="Email..." class="form-email form-control" id="form-email1">
+                                                                <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" placeholder="Email..." class="form-email form-control" id="form-email1" required>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label class="sr-only" for="form-user-name">Tài khoản</label>
-                                                                <input type="text" name="username" placeholder="Tài khoản..." class="form-user-name form-control" id="form-user-name1">
+                                                                <input type="text" name="username" placeholder="Tài khoản..." class="form-user-name form-control" id="form-user-name1" required>
                                                                 <span id="user-result" style="position: absolute; top: 202px; right: 10px;"></span>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label class="sr-only" for="form-password">Mật khẩu</label>
-                                                                <input type="password" name="password" placeholder="Mật khẩu..." class="form-password form-control" id="form-password1">
+                                                                <input type="password" name="password" placeholder="Mật khẩu..." class="form-password form-control" id="form-password1" required>
                                                             </div>
                                                             <input type="hidden" value="register" name="command">
                                                             <button type="submit" class="btn" id="btn-register">Đăng ký</button>

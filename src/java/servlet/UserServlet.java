@@ -37,6 +37,8 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         String command = request.getParameter("command");
         String url = "";
         User user = new User();
@@ -51,7 +53,7 @@ public class UserServlet extends HttpServlet {
                 userDAO.insert(user);
                 session.setAttribute("user", user);
                 url = "/index.jsp";
-                rd = getServletContext().getRequestDispatcher(url);
+                rd = request.getRequestDispatcher(url);
                 rd.forward(request, response);
                 break;
             case "login":
@@ -62,7 +64,7 @@ public class UserServlet extends HttpServlet {
                 if (user != null) {
                     session.setAttribute("user", user);
                     url = "/index.jsp";
-                    rd = getServletContext().getRequestDispatcher(url);
+                    rd = request.getRequestDispatcher(url);
                     rd.forward(request, response);
                 } else {
 //                    request.setAttribute("error", "Error email or password!");
