@@ -229,7 +229,31 @@ public class ArticleDAO extends IDAO<Article> {
 
     @Override
     public ArrayList<Article> selectByName(String name) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ArrayList<Article> list = new ArrayList<>();
+        String sql = "SELECT * FROM article a join category c on a.category_id = c.id WHERE `title` LIKE '%" + name + "%'";
+        try {
+            rs = statement.executeQuery(sql);
+            while (rs.next()) {
+                Article article;
+                article = new Article(
+                        rs.getInt("id"),
+                        new Category(rs.getInt("category_id"), rs.getString("name"), rs.getString("alias")),
+                        rs.getString("title"),
+                        rs.getString("content"),
+                        rs.getString("link"),
+                        rs.getString("url_thumbnail"),
+                        rs.getTimestamp("created_at"),
+                        rs.getInt("view")
+                );
+                article.setLatitude(rs.getString("latitude"));
+                article.setLongitude(rs.getString("longitude"));
+                article.setLocationDetail(rs.getString("locationDetail"));
+                list.add(article);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ArticleDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
     }
 
     @Override

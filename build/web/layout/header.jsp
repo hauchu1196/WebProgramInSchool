@@ -123,9 +123,9 @@
                                     </ul>
                                 </div>
                                 <div class="col-md-4 dvp-search-header">
-                                    <form role="search" method="get" class="searchform" action="">
+                                    <form role="search" method="get" class="searchform" action="search">
                                         <div class="dvp-search active">
-                                            <input id="searchinput" type="text" placeholder="Nhập nội dung tìm kiếm...">
+                                            <input id="searchinput" type="text" placeholder="Nhập nội dung tìm kiếm..." name="key">
                                             <button type="submit" class="dvp-btn-search">
                                                 <span><i class="fa fa-search"></i></span>
                                             </button>

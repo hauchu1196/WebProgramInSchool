@@ -44,7 +44,6 @@
         <servlet-name>CategoryServlet</servlet-name>
         <servlet-class>servlet.admin.CategoryServlet</servlet-class>
     </servlet>
-    
     <servlet>
         <servlet-name>AdminArticleServlet</servlet-name>
         <servlet-class>servlet.admin.ArticleServlet</servlet-class>
@@ -74,8 +73,10 @@
         <servlet-name>EditArticleServlet</servlet-name>
         <servlet-class>servlet.admin.EditArticleServlet</servlet-class>
     </servlet>
-    
-    
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>servlet.SearchServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FileUploadServlet</servlet-name>
         <url-pattern>/upload</url-pattern>
@@ -142,7 +143,6 @@
         <url-pattern>/admin/article/edit</url-pattern>
         <url-pattern>/admin/article/edit/*</url-pattern>
     </servlet-mapping>
-    
     <filter>
         <filter-name>LoginAdminFilter</filter-name>
         <filter-class>filter.LoginAdminFilter</filter-class>
@@ -152,6 +152,10 @@
         <url-pattern>/admin/article/*</url-pattern>
         <url-pattern>/admin/index.jsp</url-pattern>
     </filter-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             600

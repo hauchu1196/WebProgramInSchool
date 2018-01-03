@@ -63,7 +63,7 @@
                                 dataHTML += "<a href=article?id=" + myObj[x].id + ">";
                                 dataHTML += "<div class='hcv-container-image'>";
                                 dataHTML += "<img class='images' src=public/img/" + myObj[x].thumbnail + " alt=''>";
-                                dataHTML += "<div class='hcv-text-bottom-image'>đi</div>";
+//                                dataHTML += "<div class='hcv-text-bottom-image'>đi</div>";
                                 dataHTML += "</div>";
                                 dataHTML += "<div class='link-main'><a href=article?id=" + myObj[x].id + ">" + myObj[x].title + "</a></div>";
                                 dataHTML += "</a>";
